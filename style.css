@@ -1,0 +1,29 @@
+:root {
+  --primary-color: #0F9D58;
+  --background-color: #f0f3f7;
+  --secon-color: #9da2ad;
+  --grey: #7a7a7b;
+  --white: #ffffff;
+}
+
+.mb-nav {
+  display: none;
+}
+
+@media(max-width: 600px) {
+  /* MOBILE NAV */
+  .mb-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+    z-index: 99;
+    overflow: hidden;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+}
