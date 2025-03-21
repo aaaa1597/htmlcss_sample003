@@ -5,11 +5,266 @@
   --grey: #7a7a7b;
   --white: #ffffff;
 }
+body {
+  font-family: "Josefin Sans", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 16px;
+  color: #111;
+  font-feature-settings: "palt";
+}
+section {
+  padding: 9rem 0;
+}
+.top__container {
+  margin: 0 auto;
+  width: 96vw;
+  min-width: 375px;
+  max-width: 1440px;
+}
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+[class*="col-"] {padding: 1rem;}
+.col-1 {width:  8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;   }
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;   }
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;   }
+.col-10{width: 83.33%;}
+.col-11{width: 91.66%;}
+.col-12{width:100%;   }
+.primary-color {
+  color: var(--primary-color);
+}
+.background-color {
+  background-color: var(--background-color);
+}
 
+/*--------------------------------
+common
+---------------------------------*/
+.align-items-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.fullheight {
+  height: 100vh;
+}
+.fullwidth {
+  width: 100%;
+}
+.bg-img {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bg-img-fixed {
+  background-attachment: fixed;
+}
+
+/*--------------------------------
+animation
+---------------------------------*/
+.left-to-right {
+  transform: translateX(-99%);
+  transition: 1s ease-in-out;
+  &.start {
+    transform: translateX(0);
+  }
+}
+.right-to-left {
+  transform: translateX(99%);
+  transition: 1s ease-in-out;
+  &.start {
+    transform: translateX(0rem);
+  }
+}
+/*--------------------------------
+mobile menu
+---------------------------------*/
 .mb-nav {
+  display: none;
+  min-width: 375px;
+  max-width: 1440px;
+}
+.mb-move-item {
+  position: absolute;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background-color: var(--primary-color);
+  transition: .5s ease-in-out;
+}
+.mb-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 25%;
+  padding: 1rem 0;
+}
+.mb-nav-item i,
+.mb-nav-item a {
+  font-size: 2rem;
+  color: var(--secon-color);
+  z-index: 2;
+}
+.mb-nav-item.active i {
+  color: var(--white);
+}
+
+/*--------------------------------
+back to top
+---------------------------------*/
+.back-to-top {
+  position: fixed;
+  bottom: 70px;
+  right: 70px;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  padding: .5rem;
+  z-index: 99;
   display: none;
 }
 
+/*--------------------------------
+top menu
+---------------------------------*/
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: var(--background-color);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  min-width: 375px;
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  min-width: 100px;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-item {
+  margin-left: 1rem;
+  padding: .5rem 1.5rem;
+  font-weight: 600;
+  color: var(--grey);
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+.menu-item:hover,
+.menu-item.active {
+  color: var(--white);
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+}
+.cart-btn {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+}
+.cart-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: 1rem;
+}
+/*--------------------------------
+section slogan
+---------------------------------*/
+.slogan {
+  text-align: left;
+}
+.slogan h2 {
+  font-size: 5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+.slogan button {
+  padding: 1rem 5rem;
+  outline: none;
+  border: none;
+  background-color: var(--background-color);
+  border: .125rem solid var(--primary-color);
+  border-radius: 2rem;
+  color: var(--primary-color);
+  margin: 3rem 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: .5s ease-in-out;
+}
+.slogan button:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/*--------------------------------
+section about
+---------------------------------*/
+.about-sec {
+  margin: 0 auto;
+  display: flex;
+}
+#about img {
+  border-radius: 2rem;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+.about-slogan {
+  padding: 4rem;
+  background-color: var(--white);
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  &.start {
+    transform: translateX(-10rem);
+  }
+}
+.about-slogan h3 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--grey);
+}
+
+/*--------------------------------
+common
+---------------------------------*/
+.delay-2 {transition-delay: .2s;}
+.delay-4 {transition-delay: .4s;}
+.delay-6 {transition-delay: .6s;}
+.delay-8 {transition-delay: .8s;}
+.delay-12{transition-delay:1.2s;}
+
+/*--------------------------------
+レスポンシブ対応(～600px)
+---------------------------------*/
 @media(max-width: 600px) {
   /* MOBILE NAV */
   .mb-nav {
@@ -26,4 +281,26 @@
     border-top-right-radius: 2rem;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
+  /* back to top */
+  .back-to-top {
+    bottom: 6rem;
+    right: 1rem;
+  }
+  /* section about */
+  .mb-about-img {
+    display: none;
+  }
+  /* END MOBILE NAV */
+  .col-xs-1 {width:  8.33%;}
+  .col-xs-2 {width: 16.66%;}
+  .col-xs-3 {width: 25%;   }
+  .col-xs-4 {width: 33.33%;}
+  .col-xs-5 {width: 41.66%;}
+  .col-xs-6 {width: 50%;   }
+  .col-xs-7 {width: 58.33%;}
+  .col-xs-8 {width: 66.66%;}
+  .col-xs-9 {width: 75%;   }
+  .col-xs-10{width: 83.33%;}
+  .col-xs-11{width: 91.66%;}
+  .col-xs-12{width:100%;   }
 }
